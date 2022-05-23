@@ -53,11 +53,14 @@ function codificarEDecodificarLetraCC(letra, eCodificar) {
   var posicaoDessaLetra = arrayDeLetrasDoAlfabeto.indexOf(letra);
   var posicaoDaLetraCodificada = undefined;
   let deslocamento = undefined;
+
+  //Descobre o deslocamento real (se for positivo ele desloca para frente e se for  negativo para trás)
   if (eCodificar) {
     deslocamento = parseInt(tagInputDeslocamento.value);
   } else {
     deslocamento = parseInt(tagInputDeslocamento.value) * -1;
   }
+
   if (deslocamento > 0) {
     var posicaoDaLetraCodificada = parseInt(posicaoDessaLetra) + deslocamento;
   } else {
@@ -69,6 +72,7 @@ function codificarEDecodificarLetraCC(letra, eCodificar) {
       parseInt(posicaoDessaLetra) + deslocamentoReal;
   }
 
+  //Com a posição da letra codificada, será encontrado a letra referente a posição no arrayDeLetrasDoAlfabeto.
   if (posicaoDaLetraCodificada <= 26) {
     var letraCodificada = arrayDeLetrasDoAlfabeto[posicaoDaLetraCodificada];
     return letraCodificada;
@@ -88,6 +92,7 @@ function codificarEDecodificarLetraCC(letra, eCodificar) {
 }
 
 function tratarFrase(frase) {
+  //CIFRA DE CESAR
   if (seletor.selectedIndex === 0) {
     var arrayDePalavras = frase.split(" "); // Divide a frase em palavras por espaço.
     var arrayDePalavrasTratadas = arrayDePalavras.map((palavra) => {
@@ -127,12 +132,8 @@ function tratarFrase(frase) {
 
 seletor.addEventListener("change", () => {
   if (seletor.selectedIndex === 1) {
-    // document.body.style.backgroundImage =
-    //   "url ('https://media.discordapp.net/attachments/911043321693110302/977775574355415070/1_-TomSdOXRLibCek5u-wOnw.jpeg?width=702&height=468')";
     deslocamentoCaixa.style.display = "none"; // Ocultar a div deslocamento se o seletor Base64 for selecionado.
   } else {
-    // document.body.style.backgroundImage =
-    //   "url('https://cdn.discordapp.com/attachments/911043321693110302/977774797511593984/fundao.jpg')";
     deslocamentoCaixa.style.display = "block"; // Retornar com a div deslomento se o Cifra de Cesar for selecionado.
   }
 });
