@@ -8,6 +8,7 @@ var botaoRadioDecodificar = document.getElementById("decodificar");
 var seletor = document.getElementById("seletor");
 var option = seletor.options[seletor.selectedIndex];
 var deslocamento = document.getElementById("deslocamento");
+var deslocamentoCaixa = document.getElementById("deslocamentoCaixa");
 
 //Alfabeto que representa as letras com posicionamento real. (1 a 26)
 var arrayDeLetrasDoAlfabeto = [
@@ -126,9 +127,13 @@ function tratarFrase(frase) {
 
 seletor.addEventListener("change", () => {
   if (seletor.selectedIndex === 1) {
-    deslocamento.style.display = "none"; // Ocultar a div deslocamento se o seletor Base64 for selecionado.
+    // document.body.style.backgroundImage =
+    //   "url ('https://media.discordapp.net/attachments/911043321693110302/977775574355415070/1_-TomSdOXRLibCek5u-wOnw.jpeg?width=702&height=468')";
+    deslocamentoCaixa.style.display = "none"; // Ocultar a div deslocamento se o seletor Base64 for selecionado.
   } else {
-    deslocamento.style.display = "block"; // Retornar com a div deslomento se o Cifra de Cesar for selecionado.
+    // document.body.style.backgroundImage =
+    //   "url('https://cdn.discordapp.com/attachments/911043321693110302/977774797511593984/fundao.jpg')";
+    deslocamentoCaixa.style.display = "block"; // Retornar com a div deslomento se o Cifra de Cesar for selecionado.
   }
 });
 
@@ -142,6 +147,8 @@ tagBotao.addEventListener("click", (e) => {
 
 //Ao carregar a página o botão já apareça selecionado.
 window.addEventListener("load", () => {
+  // document.body.style.backgroundImage =
+  //   "url('https://cdn.discordapp.com/attachments/911043321693110302/977774797511593984/fundao.jpg')";
   botaoRadioCodificar.checked = true;
 });
 

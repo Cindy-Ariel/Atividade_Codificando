@@ -6,50 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="index.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <html>
     <body>
-      <h1>Codificador e Decodificador</h1>
-
-      <label for="opacao">Escolha a sua opção abaixo.</labal>
-      <select id="seletor">
-        <option id="opcaoCifra">Cifra de Cesar </option>
-        <option id="opcaoBase">Base64</option>
-      </select>
       
-      <input
-        type="radio"
-        id="codificar"
-        name="Escolha"
-        value="codificar"
-      />
-      <label for="codificar">Codificar</label><br />
-      
-      <input
-        type="radio"
-        id="decodificar"
-        name="Escolha"
-        value="decodificar"
-      />
-      <label for="decodificar">Decofificar</label><br />
 
-      <div id="deslocamento">
-        <label for="deslocamento">Deslocamento</label>
-        <input id="deslocamento" type="number" />
+      <div id="principal">
+
+        <h1>Codificador e Decodificador</h1>
+         
+        <div id="campoEscolha" >
+          <label for="opacao">Escolha a sua opção.</labal>
+         <select id="seletor">
+           <option id="opcaoCifra">Cifra de Cesar </option>
+           <option id="opcaoBase">Base64</option>
+         </select>
+        </div>
+          
+        
+        <br>
+
+        <div class="dflex tamanho">
+          
+          <div>
+            <input 
+              type="radio"
+              id="codificar"
+              name="Escolha"
+              value="codificar"
+            />
+          <label for="codificar">Codificar</label>
+          </div>
+        
+
+          <div>
+            <input
+              type="radio"
+              id="decodificar"
+              name="Escolha"
+              value="decodificar"
+            />
+            <label for="decodificar">Decodificar</label>
+          </div>
+        </div>
+       
+
+
+
+
+        <div id="deslocamentoCaixa" class="tamanho">
+            <label for="deslocamento">Deslocamento</label>
+            <input id="deslocamento"class="inputTexto" type="number" />
+        </div>
+
+
+        <div class="tamanho">
+          <label for="entrada">Entrada</label>
+          <input class="inputTexto" id="entrada" type="text" />
+        </div>
+
+
+        <div class="tamanho">
+          <label for="saida">Saída</label>
+          <input class="inputTexto" id="saida" type="text" />
+        </div>
+
+
+
+        <div class="botoes dflex tamanho">
+          <button  id="botaoOK">Codificar mensagem!</button>
+          <button id="botaoLimpar">Limpar</button>
+        </div>
+        
       </div>
-
-      <div>
-        <label for="entrada">ENTRADA</label>
-        <input id="entrada" type="text" />
-      </div>
-
-
-      <div>
-        <label for="saida">SAIDA</label>
-        <input id="saida" type="text" />
-      </div>
-      <button id="botaoOK">Codificar mensagem!</button>
-      <button id="botaoLimpar">Limpar</button>
+     
     </body>
   </html>
 </html>
